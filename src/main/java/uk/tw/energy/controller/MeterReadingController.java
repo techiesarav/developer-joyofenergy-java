@@ -48,4 +48,9 @@ public class MeterReadingController {
                 ? ResponseEntity.ok(readings.get())
                 : ResponseEntity.notFound().build();
     }
+
+    @GetMapping
+    public String print() {
+        return "Hello";
+    }
 }

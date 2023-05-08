@@ -3,6 +3,7 @@ package uk.tw.energy.domain;
 import java.math.BigDecimal;
 import java.time.DayOfWeek;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 public class PricePlan {
@@ -39,15 +40,8 @@ public class PricePlan {
                 .orElse(unitRate);
     }
 
-
-    static class PeakTimeMultiplier {
-
-        DayOfWeek dayOfWeek;
-        BigDecimal multiplier;
-
-        public PeakTimeMultiplier(DayOfWeek dayOfWeek, BigDecimal multiplier) {
-            this.dayOfWeek = dayOfWeek;
-            this.multiplier = multiplier;
-        }
+    public List<PeakTimeMultiplier> getPeakTimeMultipliers() {
+        return new ArrayList<>(this.peakTimeMultipliers);
     }
+
 }
